@@ -1,38 +1,31 @@
-body {
-  background: linear-gradient(135deg, #ffb6c1, #d8b4fe);
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-}
-
 #magicButton {
-  padding: 20px 40px;
-  font-size: 24px;
+  position: absolute;
+  padding: 30px 60px;
+  font-size: 32px;
   border: none;
-  border-radius: 50px;
-  background-color: #ff69b4;
+  border-radius: 60px;
+  background: linear-gradient(135deg, #ff4d6d, #ff85a1);
   color: white;
   cursor: pointer;
   z-index: 10;
+  animation: pulse 1.5s infinite;
 }
 
-.unicorn {
+.message {
   position: absolute;
-  font-size: 50px;
-  animation: float 3s linear forwards;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff3366;
+  animation: floatUp 3.5s ease-out forwards;
 }
 
-@keyframes float {
+@keyframes floatUp {
   0% {
-    transform: translateY(0) scale(0.5);
+    transform: translateY(0) scale(0.8);
     opacity: 1;
   }
   100% {
-    transform: translateY(-300px) scale(1.2);
+    transform: translateY(-350px) scale(1.2);
     opacity: 0;
   }
 }
