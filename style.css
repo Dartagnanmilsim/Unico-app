@@ -1,31 +1,69 @@
-#magicButton {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffb6c1, #d8b4fe);
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Centro exacto */
+.center {
   position: absolute;
-  padding: 30px 60px;
-  font-size: 32px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+#magicButton {
+  padding: 25px 50px;
+  font-size: 28px;
   border: none;
   border-radius: 60px;
   background: linear-gradient(135deg, #ff4d6d, #ff85a1);
   color: white;
   cursor: pointer;
-  z-index: 10;
   animation: pulse 1.5s infinite;
 }
 
-.message {
+/* Unicornio y besos */
+.unicorn, .kiss, .message {
   position: absolute;
-  font-size: 32px;
+  animation: floatUp 3.5s ease-out forwards;
+}
+
+.unicorn {
+  font-size: 48px;
+}
+
+.kiss {
+  font-size: 34px;
+}
+
+.message {
+  font-size: 26px;
   font-weight: bold;
   color: #ff3366;
-  animation: floatUp 3.5s ease-out forwards;
+  text-shadow: 0 0 5px white;
 }
 
 @keyframes floatUp {
   0% {
-    transform: translateY(0) scale(0.8);
+    transform: translateY(0) scale(0.7);
     opacity: 1;
   }
   100% {
     transform: translateY(-350px) scale(1.2);
     opacity: 0;
   }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
 }
