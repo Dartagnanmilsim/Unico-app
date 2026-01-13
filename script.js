@@ -2,43 +2,22 @@ const button = document.getElementById("magicButton");
 const container = document.getElementById("unicornContainer");
 
 button.addEventListener("click", () => {
-  for (let i = 0; i < 12; i++) {
-    spawnUnicorn();
-    spawnKiss();
+  for (let i = 0; i < 15; i++) {
+    spawn("🦄");
+    spawn("💋");
   }
-  spawnMessage();
+  spawn("TE AMO SALO ❤️");
 });
 
-function randomX() {
-  return Math.random() * (window.innerWidth - 50);
-}
-
-function spawnUnicorn() {
+function spawn(content) {
   const el = document.createElement("div");
-  el.className = "unicorn";
-  el.textContent = "🦄";
-  el.style.left = randomX() + "px";
-  el.style.top = window.innerHeight + "px";
-  container.appendChild(el);
-  setTimeout(() => el.remove(), 3500);
-}
+  el.className = "float";
+  el.textContent = content;
 
-function spawnKiss() {
-  const el = document.createElement("div");
-  el.className = "kiss";
-  el.textContent = "💋";
-  el.style.left = randomX() + "px";
+  el.style.left = Math.random() * (window.innerWidth - 120) + "px";
   el.style.top = window.innerHeight + "px";
-  container.appendChild(el);
-  setTimeout(() => el.remove(), 3000);
-}
 
-function spawnMessage() {
-  const el = document.createElement("div");
-  el.className = "message";
-  el.textContent = "TE AMO SALO ❤️";
-  el.style.left = randomX() + "px";
-  el.style.top = window.innerHeight + "px";
   container.appendChild(el);
+
   setTimeout(() => el.remove(), 3500);
 }
