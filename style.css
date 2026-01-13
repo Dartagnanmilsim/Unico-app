@@ -10,7 +10,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Centro exacto */
+/* Botón centrado */
 .center {
   position: absolute;
   top: 50%;
@@ -30,27 +30,17 @@ body {
   animation: pulse 1.5s infinite;
 }
 
-/* Unicornio y besos */
-.unicorn, .kiss, .message {
+/* ELEMENTO UNIFICADO */
+.float {
   position: absolute;
+  font-size: 32px;
+  font-weight: bold;
+  color: #ff3366;
+  text-shadow: 0 0 6px white;
   animation: floatUp 3.5s ease-out forwards;
 }
 
-.unicorn {
-  font-size: 48px;
-}
-
-.kiss {
-  font-size: 34px;
-}
-
-.message {
-  font-size: 26px;
-  font-weight: bold;
-  color: #ff3366;
-  text-shadow: 0 0 5px white;
-}
-
+/* Animación única */
 @keyframes floatUp {
   0% {
     transform: translateY(0) scale(0.7);
@@ -62,6 +52,7 @@ body {
   }
 }
 
+/* Pulso del botón */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.08); }
