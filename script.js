@@ -1,12 +1,19 @@
 const button = document.getElementById("magicButton");
-const container = document.getElementById("unicornContainer");
+
+let step = 0; // controla el orden
 
 button.addEventListener("click", () => {
-  for (let i = 0; i < 15; i++) {
+  step = (step + 1) % 3;
+
+  if (step === 1) {
     spawn("🦄");
+  } 
+  else if (step === 2) {
+    spawn("TE AMO SALO ❤️");
+  } 
+  else {
     spawn("💋");
   }
-  spawn("TE AMO SALO ❤️");
 });
 
 function spawn(content) {
@@ -14,10 +21,10 @@ function spawn(content) {
   el.className = "float";
   el.textContent = content;
 
-  el.style.left = Math.random() * (window.innerWidth - 120) + "px";
-  el.style.top = window.innerHeight + "px";
+  el.style.left = Math.random() * window.innerWidth + "px";
+  el.style.bottom = "-40px";
 
-  container.appendChild(el);
+  document.body.appendChild(el);
 
-  setTimeout(() => el.remove(), 3500);
+  setTimeout(() => el.remove(), 4000);
 }
