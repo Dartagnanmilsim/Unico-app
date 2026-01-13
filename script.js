@@ -2,45 +2,43 @@ const button = document.getElementById("magicButton");
 const container = document.getElementById("unicornContainer");
 
 button.addEventListener("click", () => {
-  for (let i = 0; i < 10; i++) {
-    createUnicorn();
-    createKiss();
+  for (let i = 0; i < 12; i++) {
+    spawnUnicorn();
+    spawnKiss();
   }
-  createMessage();
+  spawnMessage();
 });
 
-function createUnicorn() {
-  const unicorn = document.createElement("div");
-  unicorn.className = "unicorn";
-  unicorn.textContent = "🦄";
-
-  unicorn.style.left = Math.random() * window.innerWidth + "px";
-  unicorn.style.top = window.innerHeight + "px";
-
-  container.appendChild(unicorn);
-  setTimeout(() => unicorn.remove(), 3500);
+function randomX() {
+  return Math.random() * (window.innerWidth - 50);
 }
 
-function createKiss() {
-  const kiss = document.createElement("div");
-  kiss.className = "kiss";
-  kiss.textContent = "💋";
-
-  kiss.style.left = Math.random() * window.innerWidth + "px";
-  kiss.style.top = window.innerHeight + "px";
-
-  container.appendChild(kiss);
-  setTimeout(() => kiss.remove(), 3000);
+function spawnUnicorn() {
+  const el = document.createElement("div");
+  el.className = "unicorn";
+  el.textContent = "🦄";
+  el.style.left = randomX() + "px";
+  el.style.top = window.innerHeight + "px";
+  container.appendChild(el);
+  setTimeout(() => el.remove(), 3500);
 }
 
-function createMessage() {
-  const msg = document.createElement("div");
-  msg.className = "message";
-  msg.textContent = "TE AMO SALO ❤️";
+function spawnKiss() {
+  const el = document.createElement("div");
+  el.className = "kiss";
+  el.textContent = "💋";
+  el.style.left = randomX() + "px";
+  el.style.top = window.innerHeight + "px";
+  container.appendChild(el);
+  setTimeout(() => el.remove(), 3000);
+}
 
-  msg.style.left = Math.random() * (window.innerWidth - 200) + "px";
-  msg.style.top = window.innerHeight + "px";
-
-  container.appendChild(msg);
-  setTimeout(() => msg.remove(), 3500);
+function spawnMessage() {
+  const el = document.createElement("div");
+  el.className = "message";
+  el.textContent = "TE AMO SALO ❤️";
+  el.style.left = randomX() + "px";
+  el.style.top = window.innerHeight + "px";
+  container.appendChild(el);
+  setTimeout(() => el.remove(), 3500);
 }
