@@ -1,0 +1,38 @@
+body {
+  background: linear-gradient(135deg, #ffb6c1, #d8b4fe);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#magicButton {
+  padding: 20px 40px;
+  font-size: 24px;
+  border: none;
+  border-radius: 50px;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.unicorn {
+  position: absolute;
+  font-size: 50px;
+  animation: float 3s linear forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300px) scale(1.2);
+    opacity: 0;
+  }
+}
